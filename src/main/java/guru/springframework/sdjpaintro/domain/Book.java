@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,6 +13,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @NoArgsConstructor
+@EqualsAndHashCode(exclude = {"title","isbn","publisher"})
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,4 +21,6 @@ public class Book {
     private String title;
     private String isbn;
     private String publisher;
+
+
 }
